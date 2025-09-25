@@ -49,13 +49,21 @@ The circuit is a symmetric full-bridge CLLC resonant converter. It consists of a
 ## 📁 Repository Structure
 
 ├── 📜 README.md
+
 ├── 📁 matlab_scripts/
+
 │   ├── 📄 calculate_parameters.m  (Main script to define specs and calculate components)
+
 │   ├── 📄 plot_gain_characteristics.m (Script to plot the DC gain curve)
+
 │   └── 📄 analyze_results.m       (Script to process and plot simulation output)
+
 ├── 📁 simulink_model/
+
 │   └── 📄 CLLC_Converter_Main.slx (The main Simulink model file)
+
 └── 📁 results/
+
 └── (This folder can store exported plots, figures, and data files)
 
 ---
