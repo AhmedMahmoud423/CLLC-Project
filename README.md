@@ -48,24 +48,14 @@ The circuit is a symmetric full-bridge CLLC resonant converter. It consists of a
 
 ## 📁 Repository Structure
 
-
-
 ├── 📜 README.md
-
 ├── 📁 matlab_scripts/
-
 │   ├── 📄 calculate_parameters.m  (Main script to define specs and calculate components)
-
 │   ├── 📄 plot_gain_characteristics.m (Script to plot the DC gain curve)
-
 │   └── 📄 analyze_results.m       (Script to process and plot simulation output)
-
 ├── 📁 simulink_model/
-
 │   └── 📄 CLLC_Converter_Main.slx (The main Simulink model file)
-
 └── 📁 results/
-
 └── (This folder can store exported plots, figures, and data files)
 
 ---
@@ -73,7 +63,7 @@ The circuit is a symmetric full-bridge CLLC resonant converter. It consists of a
 ## 🔧 Prerequisites
 
 To run the simulations and scripts in this repository, you will need:
-* **MATLAB R2022b** or newer.
+* **MATLAB R2022a** or newer.
 * **Simulink**.
 * **Simscape Electrical™** (formerly SimPowerSystems).
 
@@ -83,7 +73,7 @@ To run the simulations and scripts in this repository, you will need:
 
 1.  **Clone the repository:**
     ```bash
-    git clone [Your Repository URL]
+    git clone https://github.com/AhmedMahmoud423/CLLC-Project-.git
     ```
 2.  **Open MATLAB.**
 3.  **Navigate to the project directory** within MATLAB.
