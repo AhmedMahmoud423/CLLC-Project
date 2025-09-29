@@ -8,7 +8,7 @@ close all;
 % -------------------------------------------------------------------------
 % You can adjust these values to see how they affect the curves.
 
-fr1 = 73e3;        % Resonant Frequency in Hz (e.g., 100 kHz)
+fr1 = 73e3;          % Resonant Frequency in Hz (e.g., 73 kHz)
 k = 4.45;            % Coupling Factor (k = Lm / L1)
 a = 0.95;            % Parameter 'a' from the equation (a = n^2 * L2 / L1)
 Q_values = [2.25,0.4,0.35,0.3,0.25,1.5]; % Array of Quality Factor (Q) values to plot
