@@ -9,9 +9,9 @@ close all;
 % You can adjust these values to see how they affect the curves.
 
 fr1 = 100e3;        % Resonant Frequency in Hz (e.g., 100 kHz)
-k = 0.2;            % Coupling Factor (k = Lm / L1)
+k = 4.45;            % Coupling Factor (k = Lm / L1)
 a = 1.0;            % Parameter 'a' from the equation (a = n^2 * L2 / L1)
-Q_values = [0.5, 1, 2, 5]; % Array of Quality Factor (Q) values to plot
+Q_values = [2.25,0.4,0.35,0.3,0.25,1.5]; % Array of Quality Factor (Q) values to plot
 
 % -------------------------------------------------------------------------
 % Calculations based on primary parameters
@@ -30,7 +30,7 @@ ws = 2 * pi * f_hz;                % Angular frequency vector in rad/s
 % -------------------------------------------------------------------------
 % Plotting the Gain Curves
 % -------------------------------------------------------------------------
-figure('Name', 'CLLC Gain Curves');
+figure('Name', 'CLLC Gain Curves Forward');
 hold on; % Hold the plot to draw multiple curves
 
 legend_entries = {}; % Initialize a cell array for legend entries
@@ -71,7 +71,7 @@ for i = 1:length(Q_values)
     plot(f_norm, Gain, 'LineWidth', 2);
     
     % Add an entry for the legend
-    legend_entries{end+1} = sprintf('Q = %.1f', Q);
+    legend_entries{end+1} = sprintf('Q = %.2f', Q);
 end
 
 % -------------------------------------------------------------------------
@@ -84,7 +84,7 @@ box on;   % Draw a box around the plot
 % Set titles and labels
 title('Gain Characteristics of a CLLC Resonant Converter', 'FontSize', 14);
 xlabel('Normalized Frequency (f_s / f_r)', 'FontSize', 12);
-ylabel('Gain |nV_{out} / V_{in}|', 'FontSize', 12);
+ylabel('Gain |nVout / Vin|', 'FontSize', 12);
 
 % Set plot limits
 xlim([min(f_norm), max(f_norm)]);
