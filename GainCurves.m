@@ -8,10 +8,11 @@ close all;
 % -------------------------------------------------------------------------
 % You can adjust these values to see how they affect the curves.
 
-fr1 = 73e3;          % Resonant Frequency in Hz (e.g., 73 kHz)
-k = 4.45;            % Coupling Factor (k = Lm / L1)
-a = 0.95;            % Parameter 'a' from the equation (a = n^2 * L2 / L1)
-Q_values = [2.25,0.4,0.35,0.3,0.25,1.5]; % Array of Quality Factor (Q) values to plot
+fr1 = 10e3;          % Resonant Frequency in Hz (e.g., 10 kHz)
+k = 2;            % Coupling Factor (k = Lm / L1)
+a = 1;            % Parameter 'a' from the equation (a = n^2 * L2 / L1)
+%Q_values = [0.1:0.1:1]; % Array of Quality Factor (Q) values to plot
+Q_values = [2.25,0.4,0.35,0.1,0.55,0.15]; % Array of Quality Factor (Q) values to plot
 
 % -------------------------------------------------------------------------
 % Calculations based on primary parameters
@@ -32,7 +33,6 @@ ws = 2 * pi * f_hz;                % Angular frequency vector in rad/s
 % -------------------------------------------------------------------------
 figure('Name', 'CLLC Gain Curves Forward');
 hold on; % Hold the plot to draw multiple curves
-
 legend_entries = {}; % Initialize a cell array for legend entries
 
 % Loop through each specified Q value
@@ -73,7 +73,7 @@ for i = 1:length(Q_values)
     % Add an entry for the legend
     legend_entries{end+1} = sprintf('Q = %.2f', Q);
 end
-
+plot(f_norm,0.8,'--');
 % -------------------------------------------------------------------------
 % Finalize the plot with labels, title, and formatting
 % -------------------------------------------------------------------------
@@ -87,8 +87,9 @@ xlabel('Normalized Frequency (f_s / f_r)', 'FontSize', 12);
 ylabel('Gain |nVout / Vin|', 'FontSize', 12);
 
 % Set plot limits
-xlim([min(f_norm), max(f_norm)]);
-ylim([0, 1.5]); % Adjust Y-axis limit if needed
+%xlim([min(f_norm), max(f_norm)]);
+xlim([0.8, 1.2]);
+ylim([0.8, 1.2]); % Adjust Y-axis limit if needed
 
 % Add the legend
 legend(legend_entries, 'Location', 'NorthEast');
